@@ -1,0 +1,6 @@
+prepa-exam/*/images
+*.aux
+*.log
+*.gz
+*.out
+
