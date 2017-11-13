@@ -1,10 +1,32 @@
 %--- 1 ----------------------------------------------------------
 \item\qouv{Définissez ce qu’est un design pattern, comment le caractériser et à quoi il sert.}
-{}
+{Un design pattern est un \textbf{modèle de conception} général qui répond à une problématique récurrente en développement. Il s'agit d'une desciption de solution dont l'implémentation doit être adpatée aux cas particulier.
+\paragraph{}
+Les patterns sont donc utilisés pour simplifier la vie des programmeurs, ils représentent un gain de temps (ne pas réinventer la roue) et une fiabilité puisqu'ils s'agit de modèles testés et approuvés avec le temps.
+
+\paragraph{}
+Un pattern est définit par:
+\begin{itemize}
+\item[$\cdot$]un \textbf{nom}
+\item[$\cdot$]une \textbf{description du problème} auquel il s'applique
+\item[$\cdot$]la \textbf{solution}: générique!! Son implémentation est à adapter au cas par cas
+\item[$\cdot$]les \textbf{conséquences} de son utilisation: peut avoir des répercutions sur le reste du code, forcer des choix d'implémentation allieurs,...
+\end{itemize}
+
+\paragraph{}
+Il existe 23 patterns \textit{classiques}, définis par le GoF, regroupés selon trois catégories:
+\begin{enumerate}
+\item \textbf{construction}: concerne l'instanciation des classes
+\item \textbf{structuraux}: concerne l'organisation des classes entre elles
+\item \textbf{comportementaux}: concerne la communication entre les objets
+\end{enumerate}
+}
 
 %--- 2 ----------------------------------------------------------
 \item\qouv{Que sont les concurrency patterns ? Donnez quelques exemples.}
-{}
+{Ce sont des patterns utilisés pour de la \textbf{programmation concurrente}.
+Ils apportent entre autre des modèles pour: la synchronisation, la communication, le stockage de données, les caches,...
+}
 
 %--- 3 ----------------------------------------------------------
 \item\qouv{Décrire ce qu’est le test driven development (TDD).}
