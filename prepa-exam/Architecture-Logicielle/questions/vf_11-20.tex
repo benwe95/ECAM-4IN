@@ -11,6 +11,7 @@ Afin d'améliorer la qualité d'un logiciel, une solution consiste à créer plu
 \paragraph{}Il est à noter que la \textit{qualité logicielle} est une notion très vague. Il faut se baser sur des critères (ex, norme ISO/CEI 9126: capacité fonctionnelle, fiabilité, facilités d'utilisation, performance, maintenabilité) et définir la façon de les mesurer pour avoir une évaluation qui a du sens.
 }
 
+
 %--- 12 ----------------------------------------------------------------------------------
 \item\vf{Un design pattern est un template de code applicable automatiquement étant donné la spécifica-
 tion d’une procédure/fonction/méthode.}
@@ -26,6 +27,7 @@ tion d’une procédure/fonction/méthode.}
 \end{enumerate}
 }
 
+
 %--- 13 ----------------------------------------------------------------------------------
 \item\vf{Le design pattern du GoF Singleton permet de créer des instances d’une classe une à la fois.}
 {\faux}
@@ -33,6 +35,7 @@ tion d’une procédure/fonction/méthode.}
 \paragraph{}
 Pour ce faire, on rend le constructeur privé (donc accessible uniquement depuis l'intérieur de la classe elle-même) et passe par une méthode pour instancier la classe. Cette méthode garantit qu'il n'existe que une seule instance au plus.
 }
+
 
 %--- 14 ----------------------------------------------------------------------------------
 \item\vf{Le design pattern du GoF Builder est de type construction.}
@@ -42,6 +45,7 @@ Pour ce faire, on rend le constructeur privé (donc accessible uniquement depuis
 \paragraph{}
 Pour ce faire, le pattern utilise une classe abstraite qui définit un comportement commun à la création des objets et des classes concrètes, qui étendent celle-ci, pour définir les différents cas possibles de création. Une autre classe, quant à elle, passe par un de ces \textit{builders} concrets pour instancier la classe abstraite.
 }
+
 
 %--- 15 ----------------------------------------------------------------------------------
 \item\vf{Pour appliquer le design pattern du GoF Facade, il faut impérativement rendre toutes les
@@ -54,6 +58,7 @@ L'intérêt du pattern est de diminuer le couplage entre le client et les classe
 Le client peut donc au choix utiliser une des façades du système pour accéder à ses fonctionnalités ou instancier directement une partie du système.
 }
 
+
 %--- 16 ----------------------------------------------------------------------------------
 \item\vf{Le design pattern du GoF Template permet d’implémenter un algorithme incomplet avec des
 « trous » à remplir (hooks).}
@@ -62,20 +67,25 @@ Le client peut donc au choix utiliser une des façades du système pour accéder
 \paragraph{}
 Pour cela, le pattern utilise une classe abstraite (la \textit{Stratégie}) qui définit une méthode avec les parties communes d'un algorithme et des trous, représentant les parties variables, qui devront être remplis par des classes concrètes qui étendent cette \textit{Stratégie}. Pour choisir l'algorithme a utiliser, le client possède une variable du type de la classe abstraite et il instancie une des classes conrètes au choix.
 }
+
+
 %--- 17 ----------------------------------------------------------------------------------
 \item\vf{La programmation impérative met l’accent sur le comment un programme fonctionne.}
 {}
 {}
+
 
 %--- 18 ----------------------------------------------------------------------------------
 \item\vf{La programmation déclarative met l’accent sur le comment un programme fonctionne.}
 {}
 {}
 
+
 %--- 19 ----------------------------------------------------------------------------------
 \item\vf{La programmation fonctionnelle est plus proche de l’impérative que de la déclarative.}
 {}
 {}
+
 
 %--- 20 ----------------------------------------------------------------------------------
 \item\vf{La programmation fonctionnelle est plus éloignée de l’impérative que de la déclarative.}
