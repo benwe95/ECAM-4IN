@@ -16,7 +16,17 @@
 
 %--- 15 ----------------------------------------------------------
 \item\qouv{Comment se calcule la complexité Fan-in Fan-out et quels sont ses avantages et inconvénients ?}
-{}
+{La complexité "Fan-in Fan-out" est un \textit{métrique} qui se base sur le flux des données locales (in=params et out=valeurs retour).
+\paragraph{}
+Deux variantes existent pour calculer cette valeur de complexité:
+\begin{enumerate}
+\item \textbf{Henry et Kafura}: $HK = Length * (Fan_{in} * Fan_{out})^{2}$
+\item \textbf{Shepperd}: $S = (Fan_{in} * Fan_{out})^{2}$
+\end{enumerate}
+
+\paragraph{UTILITE [...]}
+}
+
 
 %--- 16 ----------------------------------------------------------
 \item\qouv{Définissez les notions de couplage afferent et efferent. Comment construit-on l’instabilité à partir

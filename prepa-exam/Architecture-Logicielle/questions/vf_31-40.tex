@@ -16,10 +16,19 @@
 
 %--- 34 ----------------------------------------------------------------------------------
 \item\vf{La complexité software de Halstead offre une mesure de la structure d’un code.}
-{}
-{}
+{???}
+{La complexité de Halstead se base sur l'implémentation \textbf{effective} d'un programme. Elle utilise le nombre d'opérateurs et d'opérandes uniques/totaux pour en déduire une série de propriétés: \textit{taille du vocabulaire}, \textit{longueur du programme}, \textit{volume d'information (V en bits)}, \textit{difficulté (D)}, \textit{efforts (E)}, \textit{temps d'implémentation (T)}, ...}
+\paragraph{}
+Ce modèle simpliste peut facilement être mis en place et permet principalement une \textbf{comparaison relatives} entre plusieurs programmes.
+\paragraph{}
+Cependant, il ne s'agit donc pas de prédictions mais bien de mesures obtenues sur base du programme développé. De plus, les valeurs sont fortement dépendantes du langage utilisé (ex: les opérateurs varient selon que l'on soit en bas niveau vs haut niveau, d'un langage à l'autre,...)
 
 %--- 35 ----------------------------------------------------------------------------------
 \item\vf{La complexité cyclomatique offre une mesure de la structure d’un code.}
-{}
-{}
+{???}
+{La complexité cyclomatique mesure le nombre d'\textbf{instructions de décision}, autrement dit le nombre de chemins possibles dans une fonction.
+\paragraph{}
+Ce métrique, facile à calculer et à mettre en oeuvre, permet d'évaluer la facilité de maintenance d'un code (au plus la complexité est grande, au plus le code devient difficile à comprendre) ainsi que d'identifier les zones pour lesquelles les efforts de tests seront les plus importants (là où la comp. est grande).
+\paragraph{}
+Cependant, ce modèle n'évalue pas la complexité des données.
+}
