@@ -71,23 +71,44 @@ Pour cela, le pattern utilise une classe abstraite (la \textit{Stratégie}) qui 
 
 %--- 17 ----------------------------------------------------------------------------------
 \item\vf{La programmation impérative met l’accent sur le comment un programme fonctionne.}
-{}
-{}
+{\vrai}
+{Un programme, en prog. impérative, possède à tout instant un \textbf{état} qui est définit par la valeur en mémoire de ses variables (à l'image des objets en POO). Il est constitué d'une \textbf{séquence d'instructions} exécutées de façon "linéaire" et qui modifient l'état du programme. 
+\paragraph{}
+Il s'agit de l'opposé de la programmation déclarative.
+\paragraph{}
+\textit{Exemples: Fortran, Algol, Pascal, Basic, C,...}
+}
 
 
 %--- 18 ----------------------------------------------------------------------------------
 \item\vf{La programmation déclarative met l’accent sur le comment un programme fonctionne.}
-{}
-{}
+{\faux}
+{La programmation déclarative se concentre sur \textbf{ce que} le programme doit faire et ne se soucie pas de comment il va y parvenir, on fournit donc seulement une "description" des résultats que l'on attend.
+\paragraph{}
+Ce paradigme est également marqué par l'\textbf{absence d'effets de bord},c'est-à-dire qu'une fonction ne modifie pas un état autre que celui de ses valeurs de retour.
+\paragraph{}
+Il s'agit de l'opposé de la programmation impérative.
+\paragraph{}
+\textit{Exemples: XML, SQL, Prolog, ...}
+
+}
 
 
 %--- 19 ----------------------------------------------------------------------------------
 \item\vf{La programmation fonctionnelle est plus proche de l’impérative que de la déclarative.}
-{}
-{}
+{\faux}
+{En programmation fonctionnelle, l'exécution d'un programme est une séquence d'évaluations de \textbf{fonctions mathématiques}. Le résultat d'une telle fonction ne dépend \textbf{que de ses entrées} et retourne toujours une même valeur de sortie pour une entrée donnée.
+\paragraph{}
+Les variables n'ont \textbf{pas d'état} et les données ne sont pas mutables, les seules valeurs fournies sont passées en paramètres aux fonctions.
+\begin{figure}[h!]
+\center\includegraphics[scale=.3]{images/vue-paradigmes}
+\end{figure}
+\paragraph{Remarque: }
+Le point d'entrée du programme est une fonction main qui produira un résultat en appelant d'autres fonctions.
+}
 
 
 %--- 20 ----------------------------------------------------------------------------------
 \item\vf{La programmation fonctionnelle est plus éloignée de l’impérative que de la déclarative.}
-{}
+{\vrai}
 {}
