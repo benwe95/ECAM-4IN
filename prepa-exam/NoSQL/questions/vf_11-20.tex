@@ -1,33 +1,45 @@
 %--- 11 -------------------------------%
 \item\vf{Un système distribué peut toujours garantir la consistence des données sur tous ses nœuds.}
-{}
-{}
+{\faux}
+{Les données peuvent être différentes d'un noeud à l'autre en fonction des mises à jour qui ont été faites ou non.}
 
 
 %--- 12 -------------------------------%
 \item\vf{Le mouvement de l’Open Data consiste à fournir librement des données récoltées pour permettre
 à la communauté de les analyser.}
-{}
-{}
+{\vrai}
+{Il s'agit de données collectées par de grands groupes (Nasa, Nsa, Union Européenne,...) et qui sont rendues publiques. On peut considérer cela comme une situation "win/win" puisque les utilisateurs ont librement accès à une quantité gigantesque d'informations et qu'ils peuvent eux-mêmes en faire des analyses, utiles dans ce cas-ci pour les groupes qui fournissent les données.}
 
 
 %--- 13 -------------------------------%
 \item\vf{Le mouvement de l’Open Data à créer des logiciels open source permettant d’analyser des
 données massives (big data).}
-{}
-{}
+{???}
+{??? sens phrase ???
+
+\paragraph{}
+Le \textbf{Big Data} consiste en l'\textbf{augmentation du volume de données} manipulées (ex: données scientifiques, réseaux sociaux, opérateurs tél., indicateurs écono et socio,...).
+
+\paragraph{}Il y un réel \textit{défi} afin de gérer et traiter cette énorme quantité de données et pour y parvenir, il faut se tourner vers d'autres modèles de BDD que le relationnel car il n'est plus adéquat.
+}
 
 
 %--- 14 -------------------------------%
 \item\vf{Google File System (GFS) est un moteur de base de données NoSQL.}
-{}
-{}
+{\vrai}
+{GFS est un \textbf{système de fichiers distribué} optimisé pour fonctionner sur un \textit{cluster}. Il est utilisé pour gérer des fichiers de taille importante (découpés en blocs et stockés sur différentes machines) qui sont rarement supprimés ou réécrits. La plupart du temps, les accès portent sur la lecture de larges zones ou des ajouts en fin de fichiers. Pour chaque fichier, il en existe une/des copie(s) pour subdvenir aux éventuelles pannes de serveurs.}
 
 
 %--- 15 -------------------------------%
 \item\vf{Apache Hadoop est une implémentation propriétaire de MapReduce, commercialisée par Oracle.}
-{}
-{}
+{\faux}
+{Il s'agit d'une implémentation \textbf{libre} de MapReduce (en Java) 
+\paragraph{Rappel: MapReduce...} il s'agit d'un \textit{modèle de programmation} dont le but est de traiter et générer de grandes quantités de données. Il se base sur des algorithmes parllèles et distribués sur un cluster. Une implémentation de MapReduce se base sur deux fonctions:
+\begin{enumerate}
+\item \textsc{Map} effectue un \textbf{traitement sur une liste} (tri, filtre,...)
+\item \textsc{Reduce} regroupe les données en un résultat.
+\end{enumerate}
+}
 
 
 %--- 16 -------------------------------%
@@ -47,19 +59,35 @@ aux autres permet de rendre un changement de leur structure plus facile.}
 %--- 18 -------------------------------%
 \item\vf{Une base de données NoSQL (clé-valeur, document et colonne) stocke des agrégats que l’on peut
 comparer aux tables du modèle relationnel}
-{}
-{}
+{\vrai}
+{Là où le modèle relationnel utilise des tables avec des rangées pour stocker les données, le modèle NoQSL utilise des "agrégats" qui sont des \textbf{unités d'information} qui peuvent être traîtées, stockées et échangées de façon atomique.
+\paragraph{}
+Ces unités de données sont \textbf{plus complexes} et \textbf{plus structurées} que leurs homologues du modèles relationnel, qui sont de simples tuples. Les possibilités de traîtement qui en résultent sont donc plus complètes.}
 
 
 %--- 19 -------------------------------%
 \item\vf{Une collection de paires clé-valeur peut être assimilée à une table relationnelle à deux colonnes
 dont la colonne représentant les clés est la clé primaire de la table.}
-{}
-{}
+{\vrai}
+{Les paires "clé-valeur" sont identifiables au moyen de la clé. L'avantage remarquable de ce système est que \textbf{la clé n'a pas de forme stricte}!!
+\paragraph{}
+La clé est un \textit{string} [...]
+\paragraph{}
+De plus, la clé n'a pas conscience du format de la valeur qu'elle refère car celle-ci est de type \textbf{blob ( = Binary Large OBject)}. Autrement dit, la valeur peut être quelconque (ex: \textit{sting, JSON, XML, objet, ...}), c'est à l'application de gérer le format de chaque valeur. De ce fait, le modèle n'a ni schéma, ni structure pour le stockage et il est donc impossible de récupérer une partie de la valeur ( -> tout ou rien).
+\paragraph{}
+Les avantages de ce modèle sont: efficacité de recherche et la simplicité 
+}
 
 
 %--- 20 -------------------------------%
-\item\vf{Supprimer la valeur associée à une clé est l’une des trois opérations de base que l’on peut réaliser
-sur une base de données clé-valeur.}{}
-{}
+\item\vf{Supprimer la valeur associée à une clé est l’une des trois opérations de base que l’on peut réaliser sur une base de données clé-valeur.}
+{\vrai / \faux???}
+{Les trois opérations de base sont:
+\begin{enumerate}
+\item \textbf{Récupérer} une valeur à partir de sa clé [Read(key)]
+\item \textbf{Définir} la valeur d'une clé [Create/Update(key, value)]
+\item \textbf{Supprimer} une clé [Delete(key)]
+\end{enumerate}
+On ne sait pas supprimer la valeur d'une clé sans supprimer la clé elle-même.
+}
 

@@ -1,14 +1,31 @@
 %--- 31 -------------------------------%
 \item\vf{En utilisant une réplication master-slave, une lecture sur le master assurera toujours d’obtenir
 les données les plus récentes}
-{}
-{}
+{\vrai}
+{Puisque le master est \textbf{le seul noeud accessible en écriture}, ses données sont les plus à jour (contrairement aux esclaves qui doivent être synchronisés).}
 
 
 %--- 32 -------------------------------%
 \item\vf{Les buckets de Riak permettent de segmenter les données en plusieurs collections d’agrégats.}
 {}
-{}
+{Riak est un \textbf{moteur NoSQL décentralisé/distribué} ( = Système de gestion de base de données SGBD) orienté clé-valeur. Il est très bon pour monter en charge, càd augmenter le volume de stockage, et a une haute tolérance aux pannex (peut enlever facilement un noeud en panne sans perte d'intégrité des données).
+\paragraph{}
+Ce SGBD stocke les clés dans des \textit{\textbf{buckets}}, qui agissent comme des \textbf{espaces de noms} pour les clés. Autrement dit deux clés peuvent porter le même noms si elles se trouvent dans des buckets différents.
+\paragraph{}
+Dans le modèle clé-valeur, lorsqu'on fait une requête sur une clé, toute la valeur est retournée et il n'est pas possible de cibler certaines parties (gauche fig\cite{fig-riak}). Le système de buckets remédie d'une certaine façon à ce problème en permettant la \textbf{segmentation des données} au sein d'un même bucket (droite fig\cite{fig-riak}). 
+
+
+\begin{figure}[h!]
+\center\includegraphics[scale=.3]{images/riak-bucket}
+\label{fig-riak}
+\caption{Riak - système de \textit{buckets} \cite{ref1}}
+\end{figure}
+
+\paragraph{Avantages:}
+\begin{itemize}
+\item[$\cdot$]pratique lorsqu'on sait que les données d'une même valeur ne seront jamais utilisées en même temps -> évite de récupérer l'ensemble du contenu de la valeur
+\end{itemize}
+}
 
 
 %--- 33 -------------------------------%
@@ -36,7 +53,7 @@ que de lecture.}
 {}
 {}
 
-
+ 
 %--- 37 -------------------------------%
 \item\vf{Une base de données orientée colonnes est très adaptée lorsqu’on a plus d’opérations de lecture
 que d’écriture.}

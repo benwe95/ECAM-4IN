@@ -1,63 +1,99 @@
 %--- 1 -------------------------------%
 \item\vf{Dans une entreprise, les données vivent souvent plus longtemps que les logiciels.}
 {\vrai}
-{blabla}
+{Une entreprise \textit{utilise} des logiciels et \textit{stocke} des données en veillant à garder le plus d'indépendance possible entre ces deux éléments. Ainsi, un changement d'implémentation de la structure des données ne devrait pas affecter le bon fonctionnement du logiciel.
+
+\paragraph{}
+Là où les données doivent persister dans le temps, un logiciel peut être amené à être remplacé (par obsolescance, optimisation,...)
+}
 
 
 %--- 2 -------------------------------%
 \item\vf{Dans une entreprise, les logiciels vivent souvent plus longtemps que les données.}
 {\faux}
-{coucou}
+{}
 
 
 %--- 3 -------------------------------%
 \item\vf{Le passage du relationnel au NoSQL se fait généralement au profit d’une diminution des garanties
 relatives à la consistence des données.}
-{}
+{???}
 {}
 
 
 %--- 4 -------------------------------%
 \item\vf{Le passage du relationnel au NoSQL se fait généralement au profit d’une diminution de la
 quantité de données stockables.}
-{}
-{}
+{\faux}
+{... stockables VS stockées...
+
+\paragraph{}
+Le NoSQL a émmergé d'un besoin de stocker de nouveaux formats de données (ex: stocker directement des objets plutôt que de devoir retrouver leur informations indépendantes pour le reconstruire), malgré la \textit{puissance} et la \textit{stabilité} des base de données relationnelles, celles-ci ne sont plus suffisantes dans certaines applications.
+}
 
 
 %--- 5 -------------------------------%
 \item\vf{Le passage du relationnel au NoSQL se fait généralement au profit de l’abandon de la possibilité
 de lire des données de manière concurrente.}
-{}
-{}
+{\faux}
+{Le modèle relationnel permet d'accéder de manière concurrente aux données (en R/W) via l'utilisation de \textbf{transactions}, les données sont stockées de façon consistante et persistante.
+
+\paragraph{}
+Le modèle NoSQL, quant à lui, permet un accès concurrent aux données MAIS elles ne sont pas garanties consistantes. De plus, les données d'une BDD étant stockées sur des serveurs différents (contrairement au relationnel -> 1machine/BDD), il se peut que des requêtes identiques fournissent des résultats différents. ... A VERIFIER
+}
 
 
 %--- 6 -------------------------------%
 \item\vf{Le passage du relationnel au NoSQL se fait généralement au profit d’une diminution des garanties
 relatives à la persistance des données.}
-{}
-{}
+{???}
+{"la gestion de la persistance des données réfère au mécanisme responsable de la sauvegarde et de la restauration des données. Ces mécanismes font en sorte qu'un programme puisse se terminer sans que ses données et son état d'exécution ne soient perdus". A VERIFIER}
 
 
 %--- 7 -------------------------------%
 \item\vf{Tout comme pour le relationnel, l’organisation des données en NoSQL suit un modèle mathéma-
 tique rigoureux.}
-{}
-{}
+{\faux}
+{Là où le relationnel se base sur des modèles mathématiques standards pour définir la structure de la BDD, le NoSQL ne suit pas de schéma (ex: possibilité d'ajout de champs sans contrôle). 
+\paragraph{}
+De cette façon, on obtient une structure \textbf{flexible} avec une BDD qui n'est pas figée dans le temps, ce qui est utile dans le cas de \textit{prototypages}.
+}
 
 
 %--- 8 -------------------------------%
 \item\vf{Le NoSQL est particulièrement adapté à des traitements de données de type OLTP}
-{}
-{}
+{\faux}
+{\textbf{Rappel: Online Transactional Processing (OLTP)...} modèle qui utilise des données dans un but purement transactionnel -> gestion
+
+\paragraph{}
+Une transaction doit faire appel à des données consistantes, ce qui n'est pas garantit dans le cas du NoSQL ... BONNE RAISON?
+}
 
 
 %--- 9 -------------------------------%
 \item\vf{Le NoSQL est particulièrement adapté à des traitements de données de type OLAP.}
-{}
-{}
+{\vrai}
+{\textbf{Rappel: Online Analytical Processing (OLAP)...} modèle qui utilise les données dans un but d'analyse et de prédictions -> statistiques
+}
 
 
 %--- 10 -------------------------------%
 \item\vf{Toutes les bases de données de type NoSQL satisfont les propriétés ACID.}
-{}
-{}
+{\faux}
+{\textbf{Rappel: proriétés ACID...}
+\begin{itemize}\setlength{\itemsep}{.3em}
+\item[$\cdot$]\textbf{A}tomicity: une transaction fait tout ou rien
+\item[$\cdot$]\textbf{C}onsistency: la BDD change d'un état valide vers un autre état valide, les données sont constamment à jour
+\item[$\cdot$]\textbf{I}solation: une transaction doit être exécutée sans avoir connaissance de l'existance des autres
+\item[$\cdot$]\textbf{D}urability: une transcation validée et confirmée est sotckée, durable dans le temps
+\end{itemize}
+
+De telles conditions correspondent au modèle relationnel.
+\paragraph{}
+Un autre ensemble de conditions, le modèle BASE, permet de gérer les \textit{pertes de consistance} en maintenant la fiabilité et correspond donc à l'approche NoSQL:
+\begin{itemize}\setlength{\itemsep}{.3em}
+\item[$\cdot$]\textbf{B}asically \textbf{A}vailable: le système renverra toujours une réponse, même si la donnée n'est pas à jour ou qu'il s'agit d'un message d'erreur.
+\item[$\cdot$]\textbf{S}oft state: l'état change constamment au cours du temps (même lorsqu'il n'y a pas d'inputs) pour essayer de se stabiliser entre les serveurs de la BDD
+\item[$\cdot$]\textbf{E}ventual consistency: le système finira tôt ou tard par être consistant
+\end{itemize}
+}
