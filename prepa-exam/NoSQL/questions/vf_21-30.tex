@@ -45,7 +45,7 @@ En sharding, les données \textbf{ne sont pas répliquées} et chaque serveur es
 \item[$\cdot$]avantages cluster (résistance aux pannes, \textit{scale out}, ...)
 \end{itemize}
 
-\paragraph{Inconvénient:}
+\paragraph{Inconvénients:}
 \begin{itemize}
 \item[$\cdot$]définir bonne répartition des données -> risque de surcharge d'un serveur
 \item[$\cdot$]pas de résilience (ni en lecture, ni en écriture) -> si un serveur tombe, une partie de la DB n'est plus du tout accessible
@@ -101,7 +101,7 @@ Ce modèle possède la propriété de \textit{read resilience}, càd que si le m
 \item[$\cdot$]avantages cluster (résistance aux pannes, \textit{scale out}, ...)
 \end{itemize}
 
-\paragraph{Inconvénient:}
+\paragraph{Inconvénients:}
 \begin{itemize}
 \item[$\cdot$]pas adapté lorsqu'il y a beaucoup d'écritures -> surcharge maître
 \item[$\cdot$]nécessite plus d'espace de stockage puisque chaque noeud est une copie complète du maître
@@ -133,7 +133,7 @@ qu’avec une réplication peer-to-peer.}
 \item[$\cdot$]fluidification du trafic pour les requêtes de lecture ET d'écriture
 \end{itemize}
 
-\paragraph{Inconvénient:}
+\paragraph{Inconvénients:}
 \begin{itemize}
 \item[$\cdot$]pas adapté lorsqu'il y a beaucoup d'écritures -> lourdeur synchronisations
 \item[$\cdot$]nécessite plus d'espace de stockage puisque chaque noeud contient toute la DB

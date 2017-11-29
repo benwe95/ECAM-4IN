@@ -1,64 +1,116 @@
 %--- 51 -------------------------------%
 \item\vf{Les bases de données orientée graphe sont très adaptée pour le sharding.}
-{}
-{}
+{\faux}
+{
+Dans le modèle orienté-graphe, toutes les données d'un même graphe doivent nécessairement se trouver sur une mêmemachine. Il n'est donc pas adapté à la distribution de type \textit{sharding}.
+}
 
 
 %--- 52 -------------------------------%
 \item\vf{OrientDB offre la possibilité d’utiliser le sharding de données.}
-{}
-{}
+{\vrai}
+{Dans OrientDB (SGBD multi-domaines: graphe, clé-valeur, colonnes et document), les données sont représentées sous forme de \textbf{classes} qui possèdent: une \textit{popriété} par "colonne" (similaire aux tables du relationnel), des \textit{contraintes} et des \textit{enregistrements}.
+\paragraph{}
+Ces classes peuvent être réparties sur différentes machines, offrant donc la possibilité d'utiliser la répartition des données en mode \textit{sharding}.
+}
 
 
 %--- 53 -------------------------------%
-\item\vf{Une approche pessimiste de la consistence des données consiste à se limiter à un serveur unique
+\item\vf{Une approche pessimiste de la consistance des données consiste à se limiter à un serveur unique
 pour le stockage des données.}
-{}
-{}
+{\faux}
+{
+La consistance de mise à jour des données n'est pas évidente à garantir lorsque plusieurs utilisateurs essaie de modifier une donnée en même temps -> conflit d'écritures (\textit{write-write)}
+
+\paragraph{}
+En cas d'échec de mise à jour, on risque de: perdre une mise à jour ou perdre de la consistance au niveau des données
+\paragraph{}
+
+Pour éviter au plus possible la perte de cohérence des données, deux approches sont envisageables:
+\begin{enumerate}
+\item \textcolor{ltred}{\textsc{pessimiste}}: approche plus lourde qui consiste à \textbf{éviter tout conflits d'écritures}, par exemple en utilisant un système de locks (lorsqu'un \textit{user} souhaite faire un W, il fait une demande pour obtenir un verrou sur cette donnée afin qu'elle ne puisse pas être modifiée par qqun d'autre entre temps). \textbf{Ce principe ne doit pas forcément se faire sur un serveur unique, il peut tout aussi bien fonctionner dans un modèle distribué}.
+\item \textcolor{ltred}{\textsc{optimiste}}: approche plus "souple" qui \textbf{tolère les conflits d'écritures}. Elle peut conserver une des mises à jour, suivant un règlement d'ordre de traitement des requêtes, ou alors conserver toutes les mises à jour en notifiant les \textit{users} du conflit. Il est alors de leur responsabilité de le régler ou du moins d'en être conscient.
+\end{enumerate}
+
+\paragraph{Remarque: }
+se limiter à un serveur unique ne garantit la consistance des données en cas de conflits d'écriture, il faut également mettre en place des mécanismes de protection
+}
 
 
 %--- 54 -------------------------------%
-\item\vf{Garantir la consistence de lecture empêchera tout conflit de type write-write.}
-{}
-{}
+\item\vf{Garantir la consistance de lecture empêchera tout conflit de type write-write.}
+{\faux}
+{
+La garantie de consistance de lecture \textbf{empêchera tout conflit de type \textit{read-write}}, de telle sorte que si plusieurs \textit{users} lisent une même donnée, ils obtiennent la même information ET que cette information ait une consistance logique.
+
+\paragraph{}
+Exemple de conséquences dues à un conflit de lecture et écriture simultannés:
+\begin{itemize}
+\item[$\cdot$]Si une information est composée de plusieurs documents/entités et que ceux-ci sont ré-écrits au même moment que la lecture est faite, certaines parties risque d'être mises à jour et d'autre non. On se retrouve alors avec des documents dans des versions différentes et donc une information qui perd son sens logique de départ.
+\end{itemize}
+}
 
 
 %--- 55 -------------------------------%
-\item\vf{Garantir la consistence de mise à jour empêchera tout conflit de type read-write.}
-{}
-{}
+\item\vf{Garantir la consistance de mise à jour empêchera tout conflit de type read-write.}
+{\faux}
+{
+La garantie de consistance de mise à jour \textbf{empêchera tout conflit de type \textit{write-write}}. Un tel conflit a lieu lorsque plusieurs \textit{users} modifient une même donnée en même temps et ses conséquences sont: perte d'une mise à jour et inconsistance des données (un \textit{user} à modifié une donnée en partant d'une version qui n'est plus la bonne).
+}
 
 
 %--- 56 -------------------------------%
 \item\vf{Garantir la consistence de réplication est impossible avec un système peer-to-peer.}
-{}
-{}
+{\vrai}
+{
+Si la "consistance de réplication" est garantie, alors plusieurs \textit{users} qui lisent une même donnée obtiendront la même information, bien que la donnée se trouve répliquée sur des noeuds différents, par exemple, ou dans des mémoires différentes (cache, RAM, disque...).
+\paragraph{}
+Cette inconsistance provient des problèmes de diffusion des changements d'information entre les différentes parties du système et est typique du modèle NoSQL car il est destiné à être distribué (\textit{cluster}). Cependant, on peut parler de consistance "à la longue" car en pratique, l'information finira \textit{toujours} par être mise à jour sur tous les noeuds.
+\paragraph{}
+Cette inconsistance est influencée par le nombre de noeuds mais égalemnet par le délai du réseau, lié au temps de communication entre les entités (qui augmente avec la distance et qui n'est pas forcément maîtrisable).
+\paragraph{}
+Garantir la consistance de réplication est \textit{"impossible"} dans un système peer-to-peer aussi petit soit-il. En effet, une approche (bien que lourde) pour limiter les problèmes de consistance serait de vérifier que la donnée ait la même valeur sur tous les noeuds MAIS le temps de faire cette vérification, la donnée pourrait avoir changé sur un noeud puisque chacun est accessible en écriture -> pas de garantie ... 
+}
 
 
 %--- 57 -------------------------------%
 \item\vf{Si mes données sont répliquées sur quatre nœuds, avec W = 2, il suffit de lire deux nœuds pour
 lire l’information la plus à jour.}
-{}
-{}
-
+{\faux}
+{
+\textit{Read Quorum:} R + W > N
+\begin{itemize}
+\item[$\cdot$]\textit{R} nombre de noeuds à contacter pour une lecture
+\item[$\cdot$]\textit{W} nombre de noeuds impliqués dans l'écriture
+\item[$\cdot$]\textit{N} facteur de réplication
+\end{itemize}
+\paragraph{}
+\sout{Si N=4 et W=2, il faut lire au moins 3 noeuds pour obtenir l'information la plus à jour (R > 4-2). En effet, en ne lisant que deux des quatre noeuds, il se pourrait qu'ils contiennent tout les deux une même ancienne valeur (puisque W=2) alors qu'en lisant 3 des noeuds, ...  } \textcolor{dkred}{LE PORBLEME RESTE LE MEME}
+\paragraph{}
+En effet, en lisant 3 noeuds, il y en aura forcément un sur les trois qui sera différent MAIS si les deux autres ont la même valeur et qu'elle correspond à une ancienne valeur alors la consistance n'est pas garantie.
+\paragraph{}
+Le problème vient du fait que le \textit{write quorum} (W > N/2) n'est pas respecté dans l'énoncé. Il faudrait que $W \ge 3$ pour garantir de lire l'information la plus à jour.
+}
 
 %--- 58 -------------------------------%
 \item\vf{Si mes données sont répliquées sur quatre nœuds, il suffit d’impliquer W = 2 nœuds dans
 l’écriture pour assurer une consistence des données.}
-{}
-{}
+{\faux}
+{
+Le \textit{write quorum} nous dit que W > N/2 pour garantir de lire l'information la plus à jour, il faudrait donc que $W \ge 3$ si N = 4.
+}
 
 
 %--- 59 -------------------------------%
 \item\vf{L’utilisation d’un timestamp comme version stamp est moins lourd à déployer que d’utiliser un
 GUID (Globally Unique Identifier).}
-{}
-{}
+{\faux ??}
+{Le timestamp est plus lourd car il nécessite la synchronisation de tous les noeuds sur une même horloge (via un serveur dédié, fuseau horaire,...) mais contrairement au GUID, il permet de comparer l'instant de changement de plusieurs versions d'une donnée.}
 
 
 %--- 60 -------------------------------%
 \item\vf{L’utilisation d’un GUID (Globally Unique Identifier) comme version stamp est moins lourd à
 déployer que d’utiliser un timestamp.}
-{}
+{\vrai}
 {}
 
