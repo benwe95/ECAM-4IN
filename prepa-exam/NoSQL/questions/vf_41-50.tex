@@ -1,25 +1,49 @@
 %--- 41 -------------------------------%
 \item\vf{L’avantage de l’utilisation de colonnes plutôt que de lignes est d’offrir un meilleur taux de
 compression des données stockées.}
-{}
-{}
+{\vrai}
+{
+En travaillant en colonnes, on peut notamment optimiser les algorithmes en fonction du types des valeurs de la colonne. (Suite réponse Q35)
+}
 
 
 %--- 42 -------------------------------%
 \item\vf{L’avantage de l’utilisation de colonnes plutôt que de lignes est d’offrir de meilleures performances lors de la lecture de tous les enregistrements d’une table.}
-{}
-{}
+{\faux}
+{
+Le modèle orienté-colonnes offre de meilleures performances à la lecture uniquement lorsqu'on travaille sur certaines colonnes de la table, car on utilise les fichiers relatifs à ces colonnes (et non toute la DB).
+\paragraph{}
+Dès lors que l'on fait une requête sur l'ensemble des enregistrements, la modèle devient un inconvénient car il nécessite d'ouvrir et de traiter TOUS les fichiers contenant les colonnes, ce qui alourdit davantage la lecture par rapport au modèle relationnel.
+}
 
 
 %--- 43 -------------------------------%
 \item\vf{Une base HBase peut servir d’input/output de MapReduce (Hadoop)}
-{}
-{}
+{\vrai}
+{
+HBase est un SGBD orienté-colonne qui s'exécute par dessus le système de fichiers HDFS ( = [...]). Il permet a une base de servir d'input/output de MapReduce.
+\paragraph{}
+Les données sont organisées dans des "\textit{tables}" identifiables par un nom. Chaque ligne possède une clé unique pour l'identifier et les colonnes sont regroupées en "\textit{familles}" (identifiables par chaines caract.). Toutes les lignes possèdent les même familles de colonnes mais celles-ci peuvent être remplies ou non.
+\paragraph{}
+En HBase, les données des cellules sont \textit{versionnées}. Les différentes versions sont identifiées par un \textit{Timestamp}.
+\paragraph{}
+Ainsi, pour obtenir la donnée d'une cellule, il faut préciser: \textit{Table --> Clé --> Famille Col. --> Colonne --> Timestamp}
+\paragraph{}
+Les \textbf{familles de colonnes sont stockées dans des HFile séparés}, ce qui facilite la structure de la DB et l'indexation des données. L'avantage de HBase est alors de proposer la distribution et la réplication des données sur un \textit{cluster}.
+\begin{figure}[h!]
+\center\includegraphics[scale=.3]{images/hbase}
+\caption{Modèle de données en HBase \cite{ref1}}
+\end{figure}
+
+\paragraph{}
+Pour l'écriture des données, celles-ci sont d'abord placées dans un buffer, le \textit{memstore}, qui écrit ensuite les changements dans un HFile [...]
+\paragraph{RAPPELS MapReduce...}
+}
 
 
 %--- 44 -------------------------------%
 \item\vf{Une base HBase peut servir de fichiers avec GFS (Google File System)}
-{}
+{???}
 {}
 
 
