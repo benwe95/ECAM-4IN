@@ -40,15 +40,15 @@ En sharding, les données \textbf{ne sont pas répliquées} et chaque serveur es
 \end{figure}
 
 \paragraph{Avantages:}
-\begin{itemize}
-\item[$\cdot$]fraction de la DB pour accélérer son traîtement et la rendre plus facile à gérer
-\item[$\cdot$]avantages cluster (résistance aux pannes, \textit{scale out}, ...)
+\begin{itemize}\setlength{\itemsep}{.2em}
+\item[\textcolor{dkgreen}{\ding{52}}]fraction de la DB pour accélérer son traîtement et la rendre plus facile à gérer
+\item[\textcolor{dkgreen}{\ding{52}}]avantages cluster (résistance aux pannes, \textit{scale out}, ...)
 \end{itemize}
 
 \paragraph{Inconvénients:}
-\begin{itemize}
-\item[$\cdot$]définir bonne répartition des données -> risque de surcharge d'un serveur
-\item[$\cdot$]pas de résilience (ni en lecture, ni en écriture) -> si un serveur tombe, une partie de la DB n'est plus du tout accessible
+\begin{itemize}\setlength{\itemsep}{.2em}
+\item[\textcolor{dkred}{\ding{56}}]définir bonne répartition des données -> risque de surcharge d'un serveur
+\item[\textcolor{dkred}{\ding{56}}]pas de résilience (ni en lecture, ni en écriture) -> si un serveur tombe, une partie de la DB n'est plus du tout accessible
 \end{itemize}
 
 }
@@ -95,17 +95,17 @@ Ce modèle possède la propriété de \textit{read resilience}, càd que si le m
 \end{figure}
 
 \paragraph{Avantages:}
-\begin{itemize}
-\item[$\cdot$]robustesse en cas de crash et \textit{read resilience}
-\item[$\cdot$]fluidification du trafic pour les requêtes de lecture
-\item[$\cdot$]avantages cluster (résistance aux pannes, \textit{scale out}, ...)
+\begin{itemize}\setlength{\itemsep}{.2em}
+\item[\textcolor{dkgreen}{\ding{52}}]robustesse en cas de crash et \textit{read resilience}
+\item[\textcolor{dkgreen}{\ding{52}}]fluidification du trafic pour les requêtes de lecture
+\item[\textcolor{dkgreen}{\ding{52}}]avantages cluster (résistance aux pannes, \textit{scale out}, ...)
 \end{itemize}
 
 \paragraph{Inconvénients:}
-\begin{itemize}
-\item[$\cdot$]pas adapté lorsqu'il y a beaucoup d'écritures -> surcharge maître
-\item[$\cdot$]nécessite plus d'espace de stockage puisque chaque noeud est une copie complète du maître
-\item[$\cdot$]les valeurs lues par plusieurs utilisateurs peuvent être différentes par inconsistence -> la cohérence des données n'est pas garantie, puiqu'il faut que le maître ait synchronisé ses modifications avec les esclaves
+\begin{itemize}\setlength{\itemsep}{.2em}
+\item[\textcolor{dkred}{\ding{56}}]pas adapté lorsqu'il y a beaucoup d'écritures -> surcharge maître
+\item[\textcolor{dkred}{\ding{56}}]nécessite plus d'espace de stockage puisque chaque noeud est une copie complète du maître
+\item[\textcolor{dkred}{\ding{56}}]les valeurs lues par plusieurs utilisateurs peuvent être différentes par inconsistence -> la cohérence des données n'est pas garantie, puiqu'il faut que le maître ait synchronisé ses modifications avec les esclaves
 \end{itemize}
 }
 
@@ -128,17 +128,17 @@ qu’avec une réplication peer-to-peer.}
 \end{figure}
 
 \paragraph{Avantages:}
-\begin{itemize}
-\item[$\cdot$]robustesse en cas de crash et \textit{complete resilience}
-\item[$\cdot$]fluidification du trafic pour les requêtes de lecture ET d'écriture
+\begin{itemize}\setlength{\itemsep}{.2em}
+\item[\textcolor{dkgreen}{\ding{52}}]robustesse en cas de crash et \textit{complete resilience}
+\item[\textcolor{dkgreen}{\ding{52}}]fluidification du trafic pour les requêtes de lecture ET d'écriture
 \end{itemize}
 
 \paragraph{Inconvénients:}
-\begin{itemize}
-\item[$\cdot$]pas adapté lorsqu'il y a beaucoup d'écritures -> lourdeur synchronisations
-\item[$\cdot$]nécessite plus d'espace de stockage puisque chaque noeud contient toute la DB
-\item[$\cdot$]risques de conflits d'écritures concurrentes
-\item[$\cdot$]peu évoluable -> l'ajout d'un nouveau noeud impose de le connecter à TOUS les autres noeuds existants
+\begin{itemize}\setlength{\itemsep}{.2em}
+\item[\textcolor{dkred}{\ding{56}}]pas adapté lorsqu'il y a beaucoup d'écritures -> lourdeur synchronisations
+\item[\textcolor{dkred}{\ding{56}}]nécessite plus d'espace de stockage puisque chaque noeud contient toute la DB
+\item[\textcolor{dkred}{\ding{56}}]risques de conflits d'écritures concurrentes
+\item[\textcolor{dkred}{\ding{56}}]peu évoluable -> l'ajout d'un nouveau noeud impose de le connecter à TOUS les autres noeuds existants
 \end{itemize}
 }
 

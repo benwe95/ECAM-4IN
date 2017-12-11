@@ -7,17 +7,18 @@ les données les plus récentes}
 
 %--- 32 -------------------------------%
 \item\vf{Les buckets de Riak permettent de segmenter les données en plusieurs collections d’agrégats.}
-{}
-{Riak est un \textbf{moteur NoSQL décentralisé/distribué} ( = Système de gestion de base de données SGBD) orienté clé-valeur. Il est très bon pour monter en charge, càd augmenter le volume de stockage, et a une haute tolérance aux pannex (peut enlever facilement un noeud en panne sans perte d'intégrité des données).
+{\vrai}
+{Riak est un \textbf{moteur NoSQL décentralisé/distribué} ( = Système de gestion de base de données SGBD) orienté clé-valeur. Il est très bon pour monter en charge, càd augmenter le volume de stockage, et a une haute tolérance aux pannes (peut enlever facilement un noeud en panne sans perte d'intégrité des données).
 \paragraph{}
-Ce SGBD stocke les clés dans des \textit{\textbf{buckets}}, qui agissent comme des \textbf{espaces de noms} pour les clés. Autrement dit deux clés peuvent porter le même noms si elles se trouvent dans des buckets différents.
+Ce SGBD stocke les clés dans des \textit{\textbf{buckets}}, qui agissent comme des \textbf{espaces de noms} pour les clés. Autrement dit deux clés peuvent porter le même nom si elles se trouvent dans des buckets différents.
 \paragraph{}
-Dans le modèle clé-valeur, lorsqu'on fait une requête sur une clé, toute la valeur est retournée et il n'est pas possible de cibler certaines parties (gauche fig\cite{fig-riak}). Le système de buckets remédie d'une certaine façon à ce problème en permettant la \textbf{segmentation des données} au sein d'un même bucket (droite fig\cite{fig-riak}). 
-
+Dans le modèle clé-valeur, lorsqu'on fait une requête sur une clé, toute la valeur est retournée et il n'est pas possible de cibler certaines parties (gauche fig\cite{riak-buckets}). Le système de buckets remédie d'une certaine façon à ce problème en permettant la \textbf{segmentation des données} au sein d'un même bucket (droite fig\cite{fig-riak}). Ainsi, un ensemble logique d'informations est identifé par un coupe \textit{Bucket --> Key} unique et il est possible de rechercher toutes les informations qui correspondent à une même clé.
+\paragraph{}
+Dans l'exemple, de la figure \cite{riak-buckets}, les données données du profil de l'utilisateur et les informations de sa session ont été séparées car il est plus intéressant de pouvoir y accéder séparemment. Chaque regroupement de donnée est alors identifé par une clé générique (elle portera le même nom dans tous les buckets, qui eux sont uniques), par exemple \textit{"sessionID\_userProfile"}. Cette clé, porteuse d'information grâce au formatage particulier de son nom, permettra ensuite d'accéder directement à un ensemble d'informations relatives à l'utilisateur, au lieu de récupérer l'ensemble de ses données.
 
 \begin{figure}[h!]
 \center\includegraphics[scale=.3]{images/riak-bucket}
-\label{fig-riak}
+\label{riak-buckets}
 \caption{Riak - système de \textit{buckets} \cite{ref1}}
 \end{figure}
 
@@ -30,14 +31,29 @@ Dans le modèle clé-valeur, lorsqu'on fait une requête sur une clé, toute la 
 
 %--- 33 -------------------------------%
 \item\vf{On ne peut pas stocker des arbres binaires comme valeurs avec Redis.}
-{}
-{}
+{\faux}
+{
+Redis est un moteur de base de données en mémoire, utilisé pour permettre une manipulation la plus rapide possible des données. Il permet de stocker \textbf{uniquement 5 types de valeurs};
+\begin{enumerate}
+\item \textcolor{ltred}{\textsc{chaine de caractères, numériques ou binaires}}
+\item \textcolor{ltred}{\textsc{liste (de chaines)}}: ajout/retrait à gauche ou à droite
+\item \textcolor{ltred}{\textsc{ensemble de chaines non trié et sans doublons}}
+\item \textcolor{ltred}{\textsc{hachage (dictionnaire) non hiérarchique}}
+\item \textcolor{ltred}{\textsc{ensemble trié avec association d'une note par élément}}
+\end{enumerate}
+\paragraph{} 
+Il n'est pas possible de créer un arbre binaire à partir d'une des structures ci-dessus.
+}
 
 
 %--- 34 -------------------------------%
 \item\vf{Redis garantit la persistance de données.}
-{}
-{}
+{\faux}
+{
+De base, Redis stocke les données en mémoire (cache ou virtuelle) uniquement. Une fois le serveur quitté, \textbf{toutes les données sont perdues}.
+\paragraph{}
+Cependant, il est de possible de configurer une sauvegarde régulière sur le disque et de la recharger.
+}
 
 
 %--- 35 -------------------------------%
