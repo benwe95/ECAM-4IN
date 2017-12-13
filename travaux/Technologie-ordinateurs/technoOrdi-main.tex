@@ -1,0 +1,36 @@
+\documentclass{sig-alternate-05-2015}
+\input{codetemplate.tex}
+
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
+\begin{document}
+%General Information
+\setcopyright{acmcopyright}
+\title{Découverte et analyse d'une technologie}
+\subtitle{La reconnaissance faciale}
+\numberofauthors{1}
+\author{
+Wéry Benoît\\
+       \affaddr{\today}\\
+       \affaddr{1200 Bruxelles}\\
+       \affaddr{Belgique}\\
+}
+\maketitle
+
+\begin{abstract}
+\textcolor{dkblue}{\textit{Un abstract [...]}}
+\end{abstract}
+
+\input{sections/introduction.tex}
+\input{sections/biometrie.tex}
+\input{sections/reconnaissance-faciale.tex}
+\input{sections/utilisation.tex}
+\input{sections/securite.tex}
+\input{sections/conclusion.tex}
+
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+
+\end{document}

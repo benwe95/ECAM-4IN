@@ -1,0 +1,42 @@
+1) Cartographie d'une ville/pays
+
+
+    But: Chercher un chemin reliant 2 points (villes, rues, batiments,...) en
+    précisant des contraintes sur le trajet, par exemple: temps min, transports
+    en commun, à pieds, passer par tel endroit,...
+
+
+    Modèle NoSQL: les graphes se prêtent parfaitement au travail. Un lieu peut
+    être représenté par un noeud et la liaison entre deux lieux par une arête.
+
+    On pourrait mettre plusieurs arêtes entre deux lieux avec des propriétés
+    différentes, par exemple:
+
+        Pour aller de Alma au Woluwe shopping:
+        1) A pieds, 15min, 2km
+        2) En bus, 5min, transport commun
+        3) En métro, 2min, transport commun
+        4) En voiture, 3min
+
+    Une autre famille de noeuds pourrait représenter des transports en commun
+    et les arêtes marqueraient le lien avec leurs arrêts. Par exemple:
+
+        Tram n°44 s'arrête à: Musée du tram, Chien vert, Montgomery,....
+
+
+    Moteur de BD:
+
+
+    Exemples de requêtes:
+
+        1) simple: soient deux lieux connectés (A et B), combien de temps
+        faut-il pour aller de A à B en étant à pieds.
+
+        2) moyenne: quel est le chemin le plus court (temps) pour se rendre
+        de A à B, en transport en commun ou à pieds mais sans voiture
+
+        3) moyenne: je souhaite faire un tour à pieds de Xkm qui passe par
+        les points A, B et C mais pas D
+
+        4) difficile: sortir toutes les possibilités pour relier A et B qui
+        qui mettent moins de X min
