@@ -1,1 +1,44 @@
 \section{La biométrie}
+%\textit{Une donnée est dite biométrique si elle permet l'identification d'une personne sur base de ce qu'elle est, qu'il s'agisse d'une caractéristique physiologique ou comportementale. Ainsi, on peut parler du visage comme étant une donnée biométrique.}
+La biométrie, qui signifie "mesure du vivant", désigne dans notre contexte \textit{"l'ensemble des procédés de reconnaissance d'une personne par certaines de ses caractéristiques physiques ou comportementales"}.\cite{Xmisc_3}. Il s'agit donc d'utiliser des informations, telles que: l'empreinte digitale, l'iris, le visage, la démarche, ... afin de pouvoir confirmer ou identifier l'identité d'un sujet humain.
+\\
+L'avantage des données biométriques est qu'elles sont: universelles, uniques, invariables, enregistrables et mesurables.
+%\begin{itemize}
+%\item[$\cdot$]\textsc{universelles} - peuvent être analyser sur chaque individu
+%\item[$\cdot$]\textsc{uniques} - sont différentes pour chaque individu
+%\item[$\cdot$]\textsc{invariables} - ne changent que très peu, voir pas du tout, au cours du temps
+%\item[$\cdot$]\textsc{enregistrables} - peuvent être stockées de façon numérique
+%\item[$\cdot$]\textsc{mesurables} - peuvent être comparées
+%\end{itemize}
+
+\subsection{Système biométrique}
+%\textit{Les composants principaux et les différents modes (enrôlement, identificaiton, authentification)}
+Un système biométrique fonctionne sur la comparaison de deux fichiers, issus de données biométriques, afin de déterminer leur taux de similitude.
+\\
+Dans un tel système, une première phase dite d'\textit{enrôlement} permet de récupérer la donnée et de l'enregistrer de façon numérique sous forme d'un modèle mathématique, que l'on appelle \textit{"signature"} ou \textit{"gabarit"}. On distingue ensuite deux modes de comparaison: 
+\begin{itemize}
+\item[$\cdot$]l'\textsc{authentification} - comparaison 1:1
+\item[$\cdot$]l'\textsc{identification} - comparaison 1:N
+\end{itemize}
+\begin{figure}[h!]
+\includegraphics[scale=.45]{images/systeme-biometrique.png}
+\caption{Modules d'un système biométrique}
+\end{figure}
+
+\subsection{Critères de performances et comparaison des technologies}
+Les éléments essentiels qui déterminent la qualité d'un tel système sont: la \textit{donnée}, le \textit{capteur} - nécessité d'obtenir un modèle analysable de bonne résolution - et les \textit{algorithmes} (détection, analyse, comparaison).
+%\textit{Intrusivité, fiabilité, coût, effort -> la place du visage d'en tout ça...}
+\paragraph{}
+Toutes les caractéristiques biométriques exploitables ne se valent pas mais elles peuvent être comparées selon différents critères tels que: l'\textit{intrusivité}, la \textit{fiabilité}, le \textit{coût} ou encore l'\textit{effort} (contribution du sujet lors de son analyse).
+\paragraph{}
+Ainsi, par exemple, si les empreintes digitales et l'iris sont meilleures que la reconnaissance du visage en termes de performances, cette dernière technique, quant à elle, est jugée moins intrusive et moins contraignante pour l'utilisateur. En effet, elle ne nécessite pas la coopération du sujet car il peut être identifié à distance. De plus les capteurs utilisés peuvent être relativement bons marché, puisqu'il s'agit dans le plus simple des cas d'un appareil photo ou d'une caméra.
+\\Néanmoins, comme nous allons le voir, la reconnaissance faciale est sujette à diverses contraintes qui compliquent l'obtention d'une information de qualité et son analyse.
+
+\subsection{Evaluation de la fiabilité}
+%\textit{Les indices TFR, TFA,...} 
+Comme cela a été dit, un système biométrique évalue le taux de similitude entre deux modèles pour authentifer un individu. Or, il est impossible d'obtenir une coïncidence de 100\% entre deux signatures. Dès lors, il faut donc fixer des seuils d'acception, qui permettent de chiffrer le système selon les facteurs suivants \cite{Xmisc_2}:
+\begin{itemize}
+\item[$\cdot$]\textsc{TFR} - Taux de Faux Rejets 
+\item[$\cdot$]\textsc{TFA} - Taux de Fausses Acceptation
+\item[$\cdot$]\textsc{TEE} - Taux d'Egale Erreur
+\end{itemize}

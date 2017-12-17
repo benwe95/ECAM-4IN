@@ -1,6 +1,7 @@
 table-matieres
 travaux/*/documentation
 travaux/*/consignes.pdf
+travaux/*/readme.md
 *.aux
 *.log
 *.gz
