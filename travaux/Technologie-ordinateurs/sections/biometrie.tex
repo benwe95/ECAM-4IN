@@ -1,6 +1,6 @@
 \section{La biométrie}
 %\textit{Une donnée est dite biométrique si elle permet l'identification d'une personne sur base de ce qu'elle est, qu'il s'agisse d'une caractéristique physiologique ou comportementale. Ainsi, on peut parler du visage comme étant une donnée biométrique.}
-La biométrie, qui signifie "mesure du vivant", désigne dans notre contexte \textit{"l'ensemble des procédés de reconnaissance d'une personne par certaines de ses caractéristiques physiques ou comportementales"}.\cite{Xmisc_3}. Il s'agit donc d'utiliser des informations, telles que: l'empreinte digitale, l'iris, le visage, la démarche, ... afin de pouvoir confirmer ou identifier l'identité d'un sujet humain.
+La biométrie, qui signifie "mesure du vivant", désigne dans notre contexte \textit{"l'ensemble des procédés de reconnaissance d'une personne par certaines de ses caractéristiques physiques ou comportementales"}.\cite{Xmisc_3}. Il s'agit donc d'utiliser des informations, telles que: l'empreinte digitale, l'iris, le visage, la démarche, ... afin de pouvoir identifier ou confirmer ou l'identité d'un sujet humain.
 \\
 L'avantage des données biométriques est qu'elles sont: universelles, uniques, invariables, enregistrables et mesurables.
 %\begin{itemize}
@@ -15,7 +15,7 @@ L'avantage des données biométriques est qu'elles sont: universelles, uniques, 
 %\textit{Les composants principaux et les différents modes (enrôlement, identificaiton, authentification)}
 Un système biométrique fonctionne sur la comparaison de deux fichiers, issus de données biométriques, afin de déterminer leur taux de similitude.
 \\
-Dans un tel système, une première phase dite d'\textit{enrôlement} permet de récupérer la donnée et de l'enregistrer de façon numérique sous forme d'un modèle mathématique, que l'on appelle \textit{"signature"} ou \textit{"gabarit"}. On distingue ensuite deux modes de comparaison: 
+Dans un tel système, une première phase dite d'\textit{enrôlement} permet de récupérer la donnée et de l'enregistrer de façon numérique en BDD sous forme d'un modèle mathématique, que l'on appelle \textit{"signature"} ou \textit{"gabarit"}. On distingue ensuite deux modes de comparaison: 
 \begin{itemize}
 \item[$\cdot$]l'\textsc{authentification} - comparaison 1:1
 \item[$\cdot$]l'\textsc{identification} - comparaison 1:N
@@ -36,7 +36,7 @@ Ainsi, par exemple, si les empreintes digitales et l'iris sont meilleures que la
 
 \subsection{Evaluation de la fiabilité}
 %\textit{Les indices TFR, TFA,...} 
-Comme cela a été dit, un système biométrique évalue le taux de similitude entre deux modèles pour authentifer un individu. Or, il est impossible d'obtenir une coïncidence de 100\% entre deux signatures. Dès lors, il faut donc fixer des seuils d'acception, qui permettent de chiffrer le système selon les facteurs suivants \cite{Xmisc_2}:
+Comme cela a été dit, un système biométrique évalue le taux de similitude entre deux modèles pour authentifer un individu. Or, il est impossible d'obtenir une coïncidence de 100\% entre deux signatures. Dès lors, il faut fixer des seuils d'acception, qui permettent de quantifier les performances d'un système selon les facteurs suivants \cite{Xmisc_2}:
 \begin{itemize}
 \item[$\cdot$]\textsc{TFR} - Taux de Faux Rejets 
 \item[$\cdot$]\textsc{TFA} - Taux de Fausses Acceptation

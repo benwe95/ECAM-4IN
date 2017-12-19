@@ -1,10 +1,35 @@
 \section{Exemples d'utilisation}
-\textit{Les applications de la reconnaissance faciale sont nombreuses: depuis la sécurité des systèmes, jusqu'à la modélisation d'animation 3D en passant par la recherche de suspects.}
-\textit{Nous retiendrons ici deux exemples, chacun étant lié à un mode d'utilisation de la biométrie tel que cité précédemment: l'identification et l'authentification}.
-\subsection{Les portails de sécurité dans les aéroports}
-\textit{Ex: aéroport de Francfort - Contrôle des passagers automatisé par la reconnaissance de visages.}
-\subsection{La FaceID de Apple}
-\subsection{Mais encore... quel futur pour la reconnaissance faciale}
-\textcolor{dkblue}{\textit{Compte tenu des progrès fait en matière de reconnaissance faciale et de son intégration dans des systèmes tels que les smartphones, quelles applications pourrait-on envisager à l'avenir grâce à une telle technologie?}}
+Les applications de la reconnaissance faciale sont nombreuses, nous en retiendrons ici deux, chacune étant liée à un mode d'utilisation de la biométrie tel que cités précédemment: l'identification et l'authentification.
+\subsection{Les systèmes de surveillance en lieux publics}
+%\textit{Ex: aéroport de Francfort - Contrôle des passagers automatisé par la reconnaissance de visages.}
+Depuis le mois d'août de cette année, la gare de Südkreuz à Berlin est en phase de test pour un dispositif de reconnaissance faciale. Plusieurs caméras on été installées dans le hall principal afin de détecter la présence d'individus réguliers qui se sont prétés à l'expérience. Le but du système, à terme, s'inscrit dans la lutte antiterroriste afin de pouvoir identifier des suspects sur base d'une liste prédéfinies.
 \paragraph{}
-\textit{Affichages publicitaires intelligents dont le contenu est adapté par la reconnaissance du visage.}
+Il s'agit donc bien ici d'un cas d'utilisation d'identification (\textit{comparaison 1:N}), dans lequel les capteurs identifient sans relâche la présence des visages en mouvement et les compare avec une liste de gabarits pour détecter la présence d'une personne.
+\paragraph{}
+Toutefois, si les autorités allemandes affirment qu'aucune images des passants innoncents ne sera conservée \cite{Xmisc_6}, ce système reste dénoncé par certaines personnes qui voient en cela une violation de "La liberté de circulation sans être observée"
+
+D'autres systèmes permettent également la lecture des émotions.
+
+Aéroport de Paris à Orly
+
+\subsection{La Face ID de Apple}
+L'IphoneX d'Apple embarque un nouveau système biométrique, la \textit{Face ID}, qui utilise cette fois-ci la reconnaissance faciale.
+\\Afin de réaliser une cartographie 3D du visage, une nouvelle technologie a été installée, la \textit{True Depth}. Celle-ci se compose de trois éléments \cite{Xmisc_4}
+\begin{itemize}
+\item[$\cdot$]un \textsc{projecteur de points}: projette près de 30 000 points infrarouges sur le visage
+\item[$\cdot$]un \textsc{point de lumière}: utilisé en cas de mauvaise luminosité
+\item[$\cdot$]une \textsc{caméra infrarouge}: capture l'image des points projettés
+\end{itemize}
+\paragraph{}
+La Face ID est accompagnée d'un coprocesseur dédié qui assure du \textit{machine learning} afin reconnaître les changements d'apparence du visage ainsi que les expressions faciales.
+
+\paragraph{}Point de vue sécurité, la signature numérique (chiffrée bien entendu) du visage est stockée localement sur l'appareil de sorte qu'aucune donnée ne soit envoyée sur les serveurs d'Apple ou sur le Cloud.
+
+\paragraph{}D'après Apple, la probabilité d'erreur de la Face ID serait de 1:1 000 000 contre 1:50 000 sur son système d'empreintes digitales \cite{Xmisc_5}. De plus, elle ne pourrait pas être trompée par l'utilisation d' une image 2D à cause de l'absence de profondeur détectée par les points infrarouges. \\Toutefois, malgré les prouesses effectuées en matière de reconnaissance 3D et la fiabilité du système, celui-ci reste sensible, dans certains cas, à la distinction de vrais jumeaux.
+
+\paragraph{}Outre des aspects d'authentification, il est à noter qu'en parallèle à la technologie Face ID, une capture en temps réel des mouvements permet également l'animation d'\textit{emojis} qui suivent les expressions faciales de l'utilisateur. Bien que cela puisse paraître inutile à priori, cela souligne les progrès importants faits en matière de détection de visages et de la miniaturisation de tels systèmes. Ces capteurs permettront forcément à l'avenir de nouvelles fonctionnalités bien plus utiles.
+
+%\subsection{Mais encore... quel futur pour la reconnaissance faciale}
+%\textcolor{dkblue}{\textit{Compte tenu des progrès fait en matière de reconnaissance faciale et de son intégration dans des systèmes tels que les smartphones, quelles applications pourrait-on envisager à l'avenir grâce à une telle technologie?}}
+%\paragraph{}
+%\textit{Affichages publicitaires intelligents dont le contenu est adapté par la reconnaissance du visage.}

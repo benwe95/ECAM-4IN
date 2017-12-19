@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Xmisc_3}
 IDEMIA (OT-Morpho).
@@ -9,5 +9,61 @@ IDEMIA (OT-Morpho).
 Biometrie-online.
 \newblock Biometrics technologies - operating principle.
 \newblock \url{http://www.biometrie-online.net/technologies/fonctionnement}.
+
+\bibitem{Xthesis_1}
+Khefif Bouchra.
+\newblock Mise au point d’une application de reconnaissance faciale.
+\newblock Mémoire de fin d’études pour l’obtention du diplôme de master
+  en informatique, Université Abou Bakr Belkaid – Tlemcen Faculté des
+  Sciences Département d’Informatique, Novembre 2013.
+
+\bibitem{Xphdthesis_1}
+Souhila~Guerfi Ababsa.
+\newblock {\em Authentification d’individus par reconnaissance de
+  caractéristiques biométriques liées aux visages 2D/3D}.
+\newblock Thèse de doctorat spécialité: Sciences de l'ingénieur,
+  Université Evry Val d'Essonne, Octobre 2008.
+
+\bibitem{Ximage_1}
+Dr. Rolf~P. Würtz.
+\newblock Scholarpedia - elastic bunch graph matching.
+\newblock
+  \url{http://www.scholarpedia.org/article/Elastic_Bunch_Graph_Matching}.
+
+\bibitem{Xphdthesis_2}
+Mébarka Belahcene.
+\newblock {\em Authentification et Identification en Biométrie}.
+\newblock Thèse de doctorat en sciences en automatique, Université
+  MohamedKhider – Biskra. Faculté des Sciences et de la technologie, Janvier
+  2013.
+
+\bibitem{Xphdthesis_3}
+Anis Chaari.
+\newblock {\em Nouvelle approche d’identification dans les bases de données
+  biométriques basée sur une classification non supervisée}.
+\newblock Thèse pour obtenir le diplôme du doctorat - spécialités sciences
+  pour l’ingénieur et informatique, Université d’Evry Val d’Essonne,
+  Octobre 2009.
+
+\bibitem{Xmisc_6}
+Euronews.
+\newblock Berlin teste les caméras à reconnaissance faciale.
+\newblock
+  \url{http://fr.euronews.com/2017/08/24/berlin-teste-les-cameras-a-reconnaissance-faciale},
+  Août 2017.
+
+\bibitem{Xmisc_4}
+Kaspersky.
+\newblock Aspects de sécurité de la technologie face id d’apple.
+\newblock \url{https://www.kaspersky.fr/blog/security-face-id-apple/9488/},
+  Septembre 2017.
+
+\bibitem{Xmisc_5}
+Iphone.fr.
+\newblock Face id : tout ce qu'il faut savoir sur la reconnaissance de visage
+  de l'iphone x.
+\newblock
+  \url{http://www.iphon.fr/post/face-id-tout-savoir-reconnaissance-faciale-iphone-x-888822},
+  Septembre 2017.
 
 \end{thebibliography}

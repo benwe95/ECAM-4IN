@@ -3,44 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: technoOrdi-main.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
-You've used 2 entries,
+Warning--entry type for "Ximage_1" isn't style-file defined
+--line 108 of file biblio.bib
+You've used 10 entries,
             1791 wiz_defined-function locations,
-            455 strings with 3767 characters,
-and the built_in function-call counts, 270 in all, are:
-= -- 20
-> -- 8
+            508 strings with 5487 characters,
+and the built_in function-call counts, 1287 in all, are:
+= -- 111
+> -- 40
 < -- 0
-+ -- 4
-- -- 2
-* -- 2
-:= -- 47
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 2
++ -- 20
+- -- 10
+* -- 33
+:= -- 228
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 10
-empty$ -- 37
-format.name$ -- 2
-if$ -- 61
+cite$ -- 10
+duplicate$ -- 57
+empty$ -- 153
+format.name$ -- 10
+if$ -- 284
 int.to.chr$ -- 0
-int.to.str$ -- 2
+int.to.str$ -- 10
 missing$ -- 0
-newline$ -- 13
-num.names$ -- 2
-pop$ -- 10
+newline$ -- 53
+num.names$ -- 10
+pop$ -- 45
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 10
+skip$ -- 27
 stack$ -- 0
 substring$ -- 0
-swap$ -- 2
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 2
-width$ -- 3
-write$ -- 20
+while$ -- 10
+width$ -- 12
+write$ -- 103
+(There was 1 warning)
