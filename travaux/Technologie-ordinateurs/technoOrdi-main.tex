@@ -21,6 +21,8 @@ Wéry Benoît\\
 
 \begin{abstract}
 %Prévoir 1 page (2 colonnes) pour Abstract + Introduction + Conclusion -> reste seulement 3 pages (6 colonnes)
+\textit{
+A travers cet article seront passés en revue le concept de biométrie et l'une de ses techniques les plus courante: la reconnaissance de visage.\\Les notions élémentaires de biométrie seront expliquées pour mieux comprendre le contexte dans lequel s'inscrit le processus de reconnaissance et différentes méthodes seront ensuite brièvement présentées pour mettre en avant les nombreuses possibilités de traitement d'une image contenant un visage ainsi que l'usage de la reconnaissance faciale dans notre quotidien.}
 \end{abstract}
 
 \input{sections/introduction.tex}
@@ -36,9 +38,11 @@ Wéry Benoît\\
 \appendix
 \section{Evaluation du taux de performance des systèmes biométriques}
 \begin{figure}[h!]
-\center\includegraphics[scale=.5]{images/performances-systeme}\label{perfo-systeme}
-\caption{URL [...]}
+\center\includegraphics[scale=.5]{images/biometrie-performance}\label{perfo-systeme}
+\caption{Source: \cite{Xphdthesis_1}}
 \end{figure}
+Les taux d'erreurs (\textit{Fausses Acceptations} et \textit{Faux Rejets}) dépendent du seuil de tolérance fixé. Les deux courbes varient de façon "opposée", de telle sorte que, par exemple, en diminuant le seuil de tolérance le match des signatures comparées soit plus vite validé, au risque d'augmenter le nombre d'individu faussement reconnus.  C'est l'intersection des courbes, le point TEE, qui est utilisé pour évaluer la performance d'un algorithme de reconnaissance par biométrie.
+
 \section{Comparaison des méthodes locales et globales de reconnaissance 2D}
 \begin{figure}[h!]
 \center\includegraphics[scale=.4]{images/locales-vs-globales}\label{locales-vs-globales}

@@ -4,10 +4,10 @@ The top-level auxiliary file: technoOrdi-main.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
 Warning--entry type for "Ximage_1" isn't style-file defined
---line 108 of file biblio.bib
+--line 118 of file biblio.bib
 You've used 10 entries,
             1791 wiz_defined-function locations,
-            508 strings with 5487 characters,
+            509 strings with 5649 characters,
 and the built_in function-call counts, 1287 in all, are:
 = -- 111
 > -- 40
